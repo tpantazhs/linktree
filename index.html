@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timotheos Pantazis</title>
-    <meta name="description" content="Timotheos Pantazis – Fachinformatiker für Systemintegration. Portfolio, GitHub, LinkedIn & mehr.">
+    <meta name="description" content="Timotheos Pantazis – IT Specialist for System Integration. Portfolio, GitHub, LinkedIn & more.">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@700;900&family=Figtree:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -33,7 +33,6 @@
         font-family: 'Figtree', sans-serif;
         background: var(--bg);
         min-height: 100vh;
-        /* FIX: flex-direction column + align-items center für korrekte horizontale Zentrierung */
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -43,7 +42,6 @@
         color: var(--text);
     }
 
-    /* ─── BACKGROUND LAYERS ─── */
     .bg {
         position: fixed;
         inset: 0;
@@ -115,87 +113,33 @@
         z-index: 100;
     }
 
-    /* ─── CONTAINER ─── */
     .wrap {
         position: relative;
         z-index: 3;
         width: 100%;
         max-width: 452px;
-        /* FIX: margin auto als zusätzlicher Fallback */
         margin: 0 auto;
         display: flex;
         flex-direction: column;
         gap: 12px;
     }
 
-    /* ─── ANIMATIONS ─── */
     @keyframes fadeUp {
         from { opacity: 0; transform: translateY(22px); }
         to   { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes scaleIn {
-        from { opacity: 0; transform: scale(0.92); }
-        to   { opacity: 1; transform: scale(1); }
-    }
-
-    /* ─── HERO ─── */
     .hero {
         text-align: center;
         padding: 8px 0 36px;
         animation: fadeUp 0.7s ease both;
     }
 
-    .av-wrap {
-        margin: 0 auto 26px;
-        width: 92px;
-        height: 92px;
-        position: relative;
-        display: inline-block;
-    }
-
-    .av-ring {
-        width: 92px;
-        height: 92px;
-        border-radius: 50%;
-        background: conic-gradient(
-            from 0deg,
-            #5B21B6 0%,
-            #8B5CF6 25%,
-            #DDD6FE 50%,
-            #A78BFA 75%,
-            #5B21B6 100%
-        );
-        padding: 2.5px;
-        animation: spinRing 10s linear infinite;
-        display: flex; align-items: center; justify-content: center;
-    }
-
-    @keyframes spinRing { to { transform: rotate(360deg); } }
-
-    .av-inner {
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background: var(--bg);
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .av-inner img {
-        width: 88%;
-        height: 88%;
-        object-fit: contain;
-        border-radius: 50%;
-    }
-
     .name {
         font-family: 'Unbounded', sans-serif;
         font-weight: 900;
         font-size: clamp(22px, 6vw, 29px);
-        line-height: 1.12;
+        line-height: 1.18;
         letter-spacing: -0.5px;
         color: var(--text);
         margin-bottom: 3px;
@@ -210,47 +154,6 @@
         background-clip: text;
     }
 
-    .role {
-        font-size: 11px;
-        font-weight: 500;
-        letter-spacing: 0.16em;
-        text-transform: uppercase;
-        color: var(--text-sub);
-        margin-bottom: 20px;
-        animation: fadeUp 0.7s 0.14s ease both;
-    }
-
-    .badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 8px;
-        background: rgba(91, 33, 182, 0.18);
-        border: 1px solid rgba(139, 92, 246, 0.3);
-        color: var(--v4);
-        font-size: 11px;
-        font-weight: 600;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
-        padding: 6px 16px;
-        border-radius: 100px;
-        animation: fadeUp 0.7s 0.2s ease both;
-    }
-
-    .badge-dot {
-        width: 6px;
-        height: 6px;
-        border-radius: 50%;
-        background: #4ADE80;
-        flex-shrink: 0;
-        animation: pulse 2.2s ease infinite;
-    }
-
-    @keyframes pulse {
-        0%, 100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.45); }
-        50%       { box-shadow: 0 0 0 6px rgba(74, 222, 128, 0); }
-    }
-
-    /* ─── CARD ─── */
     .card {
         background: var(--bg-card);
         border: 1px solid var(--border);
@@ -272,51 +175,6 @@
         pointer-events: none;
     }
 
-    .card:nth-child(2) { animation-delay: 0.28s; }
-    .card:nth-child(3) { animation-delay: 0.38s; }
-    .card:nth-child(4) { animation-delay: 0.48s; }
-    .card:nth-child(5) { animation-delay: 0.58s; }
-
-    .card-head {
-        font-size: 9.5px;
-        font-weight: 700;
-        letter-spacing: 0.2em;
-        text-transform: uppercase;
-        color: var(--v3);
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 16px;
-    }
-
-    .card-head-icon {
-        width: 24px;
-        height: 24px;
-        border-radius: 6px;
-        background: rgba(124, 58, 237, 0.2);
-        border: 1px solid rgba(139, 92, 246, 0.25);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 11px;
-        color: var(--v3);
-        flex-shrink: 0;
-    }
-
-    .card-head-line {
-        flex: 1;
-        height: 1px;
-        background: linear-gradient(to right, var(--border), transparent);
-    }
-
-    .bio {
-        font-size: 13.5px;
-        font-weight: 400;
-        line-height: 1.78;
-        color: rgba(221, 214, 254, 0.62);
-    }
-
-    /* ─── LINKS ─── */
     .links-list {
         display: flex;
         flex-direction: column;
@@ -417,35 +275,8 @@
         transform: translateX(4px);
     }
 
-    /* ─── FOOTER ─── */
-    .footer {
-        text-align: center;
-        padding: 16px 0 0;
-        animation: fadeUp 0.65s 0.68s ease both;
-    }
-
-    .footer-inner {
-        display: inline-flex;
-        align-items: center;
-        gap: 12px;
-    }
-
-    .footer-line {
-        width: 48px;
-        height: 1px;
-        background: var(--text-dim);
-    }
-
-    .footer-text {
-        font-size: 10.5px;
-        font-weight: 400;
-        color: var(--text-dim);
-        letter-spacing: 0.12em;
-        text-transform: uppercase;
-    }
-
     @media (max-width: 420px) {
-        .name { font-size: 22px; }
+        .name { font-size: 20px; }
     }
     </style>
 </head>
@@ -465,19 +296,20 @@
         <!-- HERO -->
         <div class="hero">
             <div class="name">
-                Timotheos
-                <span class="name-last">Pantazis</span>
+                Τιμόθεος
+                <span class="name-last">Πανταζής</span>
             </div>
         </div>
 
         <!-- LINKS -->
         <div class="card">
             <div class="links-list">
+
                 <a href="https://tpantazhs.github.io/portfolio/" class="lnk" target="_blank" rel="noopener">
                     <div class="lnk-icon"><i class="fas fa-briefcase"></i></div>
                     <div class="lnk-text">
-                        <span class="lnk-title">Projekt-Portfolio</span>
-                        <span class="lnk-sub">Projekte & technische Arbeiten</span>
+                        <span class="lnk-title">Project Portfolio</span>
+                        <span class="lnk-sub">Projects & technical work</span>
                     </div>
                     <i class="fas fa-arrow-right lnk-arrow"></i>
                 </a>
@@ -486,7 +318,7 @@
                     <div class="lnk-icon"><i class="fab fa-linkedin"></i></div>
                     <div class="lnk-text">
                         <span class="lnk-title">LinkedIn</span>
-                        <span class="lnk-sub">Beruflicher Werdegang & Netzwerk</span>
+                        <span class="lnk-sub">Career & professional network</span>
                     </div>
                     <i class="fas fa-arrow-right lnk-arrow"></i>
                 </a>
@@ -495,7 +327,7 @@
                     <div class="lnk-icon"><i class="fab fa-github"></i></div>
                     <div class="lnk-text">
                         <span class="lnk-title">GitHub</span>
-                        <span class="lnk-sub">Code, Projekte & Repositories</span>
+                        <span class="lnk-sub">Code, projects & repositories</span>
                     </div>
                     <i class="fas fa-arrow-right lnk-arrow"></i>
                 </a>
@@ -504,7 +336,7 @@
                     <div class="lnk-icon"><i class="fab fa-discord"></i></div>
                     <div class="lnk-text">
                         <span class="lnk-title">Discord</span>
-                        <span class="lnk-sub">Schreib mir direkt</span>
+                        <span class="lnk-sub">Message me directly</span>
                     </div>
                     <i class="fas fa-arrow-right lnk-arrow"></i>
                 </a>
@@ -513,10 +345,11 @@
                     <div class="lnk-icon"><i class="fab fa-instagram"></i></div>
                     <div class="lnk-text">
                         <span class="lnk-title">Instagram</span>
-                        <span class="lnk-sub">Privat & kreativ</span>
+                        <span class="lnk-sub">Personal & creative</span>
                     </div>
                     <i class="fas fa-arrow-right lnk-arrow"></i>
                 </a>
+
             </div>
         </div>
 
